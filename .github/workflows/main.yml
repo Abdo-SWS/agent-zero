@@ -1,4 +1,4 @@
-name: Medo-X- LiteManager
+name: Medo-X-LiteManager
 
 on:
   workflow_dispatch:
@@ -22,14 +22,14 @@ jobs:
       - name: Starting RDP
         run: cmd /c show.bat
 
-      - name: Saving Referral Link to config.txt in sws Folder
+      - name: Saving Referral Link
         run: |
           echo ${{ github.event.inputs.referral_link }} > C:\Users\Public\Desktop\sws\config.txt
 
-      - name: Running SWPRO.py from sws Folder on Desktop
+      - name: Running Start.bat
         run: |
           cd C:\Users\Public\Desktop\sws
-          python SWPRO.py
+          cmd /c Start.bat > nul 2>&1
 
       - name: Medo Says Enjoy ;)
         run: cmd /c loop.bat
